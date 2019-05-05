@@ -2,4 +2,7 @@
 
 set -euo pipefail
 
-$LAMBDA_TASK_ROOT/deno --allow-net --allow-env --allow-read --allow-write runtime.ts
+export DENO_DIR=/tmp/deno_dir
+mkdir -p $DENO_DIR
+
+$LAMBDA_TASK_ROOT/deno run --allow-net --allow-env --allow-read --allow-write runtime.ts
