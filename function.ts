@@ -1,3 +1,9 @@
 export async function handler(event) {
-  return `hello from Deno in AWS Lambda\n${JSON.stringify(Deno.version)}`
+  return {
+    statusCode: 200,
+    body: JSON.stringify({
+      version: Deno.version,
+      build: Deno.build
+    })
+  }
 }

@@ -10,9 +10,10 @@ async function main() {
     const requestId = invocation.headers.get(REQUEST_ID_HEADER)
     const payload = await invocation.json()
     const res = await handler(payload)
+    const body = typeof res === 'string' ? { statusCode: 200, body: res } : res
     await(await fetch(`${API_INVOCATION}/${requestId}/response`, {
       method: "POST",
-      body: typeof res === "string" ? res : JSON.stringify(res)
+      body: JSON.stringify(body)
     })).blob()
   }
 }
