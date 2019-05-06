@@ -5,5 +5,5 @@ export async function handler(event) {
       version: Deno.version,
       build: Deno.build
     })
-  }
+  };
 }
