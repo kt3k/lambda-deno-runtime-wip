@@ -1,6 +1,6 @@
 .PHONY: function.zip
 function.zip:
-	zip function.zip bootstrap deno function.ts runtime.ts
+	zip function.zip bootstrap deno function.ts
 
 .PHONY: function-only.zip
 function-only.zip:
@@ -8,7 +8,7 @@ function-only.zip:
 
 .PHONY: runtime.zip
 runtime.zip:
-	zip runtime.zip bootstrap deno runtime.ts
+	zip runtime.zip bootstrap deno
 
 .PHONY: create-lambda
 create-lambda:
