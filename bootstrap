@@ -1,5 +1,4 @@
 #!/bin/sh
-
 set -euo pipefail
 
 SCRIPT_DIR=$(cd $(dirname $0); pwd)
@@ -7,7 +6,6 @@ HANDLER_NAME=$(echo "$_HANDLER" | cut -d. -f2)
 HANDLER_FILE=$(echo "$_HANDLER" | cut -d. -f1)
 
 export DENO_DIR=/tmp/deno_dir
-mkdir -p $DENO_DIR
 
 echo "
 import { $HANDLER_NAME } from '$LAMBDA_TASK_ROOT/$HANDLER_FILE.ts';
